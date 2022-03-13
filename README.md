@@ -9,4 +9,6 @@ Before cTokenMinePool and MonkeyContract, you should deploy this forked compound
 
 This project of forked compound only add access control, so only cTokenMinePool can access, which ensure the borrowIndex in cToken can't be changed unexpectedly.
 
+After deploying, call CErc20Delegator.transferOwnership() to address of deployed cTokenMinePool, so the cToken can only be minted by the owner.
+
 When complete deploying, copy cTokenDelegator & ComptrollerG1 address to replace the address in [./scripts/token.py](https://github.com/loophe/cTokenMinePool/blob/master/scripts/token.py), which is scripts of deploying and testing of cTokenMinePool.sol & MonkeyContract.sol, you can customize it to test more function.
